@@ -1,5 +1,5 @@
 ---
-title: Firefly 文章加密
+title: HanYion 文章加密
 published: 1970-01-02
 description: 这是一篇密码保护的示例文章，用于演示文章加密功能。
 tags: [示例, 密码保护]
@@ -23,11 +23,11 @@ passwordHint: "示例文章密码123456"
 
 ## 图片
 
-![Firefly](./images/1.avif)
+![HanYion](./images/1.avif)
 
 ## GitHub 仓库卡片
 
-::github{repo="CuteLeaf/Firefly"}
+::github{repo="CuteLeaf/HanYion"}
 
 ## 提示框
 

@@ -28,7 +28,7 @@ try {
 	const pkg = JSON.parse(
 		readFileSync(new URL("../../../package.json", import.meta.url), "utf-8"),
 	);
-	blogVersion = pkg.version || "Firefly unknown";
+	blogVersion = pkg.version || "HanYion unknown";
 } catch {}
 
 // Astro 版本（从已安装的 astro 包读取）
@@ -98,8 +98,8 @@ const mainItems = [
 	{
 		icon: "mdi:clover",
 		label: i18n(I18nKey.siteInfoBlogVersion),
-		value: `Firefly v${blogVersion}`,
-		href: "https://github.com/CuteLeaf/Firefly",
+		value: `HanYion v${blogVersion}`,
+		href: "https://github.com/CuteLeaf/HanYion",
 	},
 	{
 		icon: "material-symbols:copyright-outline",
@@ -124,7 +124,7 @@ const detailItems: {
 	},
 	{
 		icon: "mdi:clover",
-		label: "Firefly",
+		label: "HanYion",
 		value: `v${blogVersion}`,
 	},
 	{

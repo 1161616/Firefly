@@ -1,10 +1,10 @@
 ---
-title: Firefly 简单使用指南
+title: HanYion 简单使用指南
 published: 1970-01-02
 pinned: true
-description: "如何使用 Firefly 博客模板。"
+description: "如何使用 HanYion 博客模板。"
 image: "./cover.avif"
-tags: ["Firefly", "博客", "Markdown", "使用指南"]
+tags: ["HanYion", "博客", "Markdown", "使用指南"]
 category: 博客指南
 draft: false
 ---
@@ -97,12 +97,12 @@ URL：`/posts/hello-world`
 #### 示例 3：其他语言文件名使用Slug
 ```yaml
 ---
-title: 如何使用 Firefly 博客主题
+title: 如何使用 HanYion 博客主题
 published: 2023-09-09
 slug: how-to-use-firefly-blog-theme
 ---
 ```
-文件：`src/content/posts/如何使用Firefly博客主题.md`
+文件：`src/content/posts/如何使用HanYion博客主题.md`
 
 URL：`/posts/how-to-use-firefly-blog-theme`
 

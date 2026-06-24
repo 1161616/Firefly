@@ -1,9 +1,9 @@
 ---
-title: Firefly 一款清新美观的 Astro 博客主题模板
+title: HanYion 一款清新美观的 Astro 博客主题模板
 published: 1970-01-02
 pinned: true
-description: Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
-tags: [Markdown, Firefly, 博客, 主题, 模板]
+description: HanYion 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
+tags: [Markdown, HanYion, 博客, 主题, 模板]
 category: 文章示例
 draft: false
 image: ./images/firefly2.avif
@@ -11,24 +11,24 @@ image: ./images/firefly2.avif
 
 ## 🌟 项目概述
 
-**Firefly** 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
+**HanYion** 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
 
 
-**🖥️在线预览： [Firefly - Demo site](https://firefly.cuteleaf.cn/)**
+**🖥️在线预览： [HanYion - Demo site](https://firefly.cuteleaf.cn/)**
 
 **🏠我的博客： [https://blog.cuteleaf.cn](https://blog.cuteleaf.cn/)**
 
-**📝Firefly使用文档： [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
+**📝HanYion使用文档： [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
 
-**⭐Firefly开源地址：[https://github.com/CuteLeaf/Firefly](https://github.com/CuteLeaf/Firefly)** 
+**⭐HanYion开源地址：[https://github.com/CuteLeaf/HanYion](https://github.com/CuteLeaf/HanYion)** 
 
 **⭐Fuwari开源地址：[https://github.com/saicaca/fuwari](https://github.com/saicaca/fuwari)**
 
-::github{repo="CuteLeaf/Firefly"}
+::github{repo="CuteLeaf/HanYion"}
 
 ::github{repo="saicaca/fuwari"}
 
-![Firefly](./images/1.avif)
+![HanYion](./images/1.avif)
 
 
 ## 🚀 技术架构
@@ -41,4 +41,4 @@ image: ./images/firefly2.avif
 
 ## 📖 配置说明
 
-> 📚 **详细配置文档**: 查看 [Firefly使用文档](https://docs-firefly.cuteleaf.cn/) 获取完整的配置指南
+> 📚 **详细配置文档**: 查看 [HanYion使用文档](https://docs-firefly.cuteleaf.cn/) 获取完整的配置指南

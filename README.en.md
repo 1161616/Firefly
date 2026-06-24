@@ -1,9 +1,9 @@
 
-<img src="./docs/images/1131.png" width = "350" height = "500" alt="Firefly" align=right />
+<img src="./docs/images/1131.png" width = "350" height = "500" alt="HanYion" align=right />
 
 <div align="center">
 
-# Firefly
+# HanYion
 > A Fresh and Beautiful Astro Static Blog Theme Template
 > 
 > ![Node.js >= 22](https://img.shields.io/badge/node.js-%3E%3D22-brightgreen) 
@@ -11,16 +11,16 @@
 ![Astro](https://img.shields.io/badge/Astro-7.0.2-orange)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)
 >
-> [![Stars](https://img.shields.io/github/stars/CuteLeaf/Firefly?style=social)](https://github.com/CuteLeaf/Firefly/stargazers)
-[![Forks](https://img.shields.io/github/forks/CuteLeaf/Firefly?style=social)](https://github.com/CuteLeaf/Firefly/network/members)
-[![Issues](https://img.shields.io/github/issues/CuteLeaf/Firefly)](https://github.com/CuteLeaf/Firefly/issues)
+> [![Stars](https://img.shields.io/github/stars/CuteLeaf/HanYion?style=social)](https://github.com/CuteLeaf/HanYion/stargazers)
+[![Forks](https://img.shields.io/github/forks/CuteLeaf/HanYion?style=social)](https://github.com/CuteLeaf/HanYion/network/members)
+[![Issues](https://img.shields.io/github/issues/CuteLeaf/HanYion)](https://github.com/CuteLeaf/HanYion/issues)
 > 
 > [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z41NQALY)
 >
 > **QQ交流群：[1087127207](https://qm.qq.com/q/ZGsFa8qX2G)**
 > 
-> ![GitHub License](https://img.shields.io/github/license/CuteLeaf/Firefly)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/CuteLeaf/Firefly)
+> ![GitHub License](https://img.shields.io/github/license/CuteLeaf/HanYion)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/CuteLeaf/HanYion)
 [![Afdian Sponsor](https://img.shields.io/badge/Afdian-Sponsor%20Author-ff69b4.svg)](https://ifdian.net/a/cuteleaf)
 </div>
 
@@ -47,21 +47,21 @@
 
 >[!TIP]
 >
->Firefly is a fresh, beautiful, and modern personal blog theme template based on the Astro framework and the Fuwari template, designed for tech enthusiasts and content creators. It integrates a modern web tech stack, offering rich feature modules and a highly customizable interface so you can easily build a professional and visually appealing personal blog.
+>HanYion is a fresh, beautiful, and modern personal blog theme template based on the Astro framework and the Fuwari template, designed for tech enthusiasts and content creators. It integrates a modern web tech stack, offering rich feature modules and a highly customizable interface so you can easily build a professional and visually appealing personal blog.
 >
->In terms of key layouts, Firefly innovatively adds dual sidebars, an article grid (multi-column) layout, and a masonry layout.
+>In terms of key layouts, HanYion innovatively adds dual sidebars, an article grid (multi-column) layout, and a masonry layout.
 >
 >It also adds widgets such as site statistics, calendar, table of contents, music player, and quick category navigation, making both the sidebar and the overall page layout richer.
 >
 >At the same time, it also adds components such as share posters, related post recommendations, and random posts, making article pages more content-rich.
 >
->**If you reference or use the component designs and related code above from Firefly, please credit Firefly.**
+>**If you reference or use the component designs and related code above from HanYion, please credit HanYion.**
 >
->Firefly also preserves the original fuwari layout, which can be freely switched in the configuration file according to your preferences.
+>HanYion also preserves the original fuwari layout, which can be freely switched in the configuration file according to your preferences.
 >
->**For more layout configurations and demos, please see: [Firefly Layout System Details](https://firefly.cuteleaf.cn/posts/firefly-layout-system/)**
+>**For more layout configurations and demos, please see: [HanYion Layout System Details](https://firefly.cuteleaf.cn/posts/firefly-layout-system/)**
 >
->Firefly supports i18n multilingual UI, but except for Simplified Chinese, other languages are AI-translated. If you find any errors, feel free to submit a [Pull Request](https://github.com/CuteLeaf/Firefly/pulls) to help improve them.
+>HanYion supports i18n multilingual UI, but except for Simplified Chinese, other languages are AI-translated. If you find any errors, feel free to submit a [Pull Request](https://github.com/CuteLeaf/HanYion/pulls) to help improve them.
 
 ## ✨ Features
 
@@ -84,7 +84,7 @@
 - [x] **Theme Color Customization** - 360° hue adjustment
 
 
-If you have useful features and optimizations, please submit a [Pull Request](https://github.com/CuteLeaf/Firefly/pulls)
+If you have useful features and optimizations, please submit a [Pull Request](https://github.com/CuteLeaf/HanYion/pulls)
 
 ## 🚀 Quick Start
 
@@ -97,15 +97,15 @@ If you have useful features and optimizations, please submit a [Pull Request](ht
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Cuteleaf/Firefly.git
-   cd Firefly
+   git clone https://github.com/Cuteleaf/HanYion.git
+   cd HanYion
    ```
    
-   **First [Fork](https://github.com/CuteLeaf/Firefly/fork) to your own repository then clone (recommended). Don't forget to Star before Fork!**
+   **First [Fork](https://github.com/CuteLeaf/HanYion/fork) to your own repository then clone (recommended). Don't forget to Star before Fork!**
 
    ```bash
-   git clone https://github.com/you-github-name/Firefly.git
-   cd Firefly
+   git clone https://github.com/you-github-name/HanYion.git
+   cd HanYion
    ```
 3. **Install dependencies:**
    ```bash
@@ -139,12 +139,12 @@ If you have useful features and optimizations, please submit a [Pull Request](ht
 
    Install Command: `pnpm install`
 
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/CuteLeaf/Firefly&project-name=Firefly&repository-name=Firefly)
-   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CuteLeaf/Firefly)
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/CuteLeaf/HanYion&project-name=HanYion&repository-name=HanYion)
+   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CuteLeaf/HanYion)
 
 ## 📖 Configuration
 
-> 📚 **Detailed Configuration Documentation**: Check [Firefly Documentation](https://docs-firefly.cuteleaf.cn/) for complete configuration guide
+> 📚 **Detailed Configuration Documentation**: Check [HanYion Documentation](https://docs-firefly.cuteleaf.cn/) for complete configuration guide
 
 ### Setting Website Language
 
@@ -234,9 +234,9 @@ All commands need to be executed in the project root directory:
 
 ## 🙏 Acknowledgments
 
-Special thanks to [saicaca](https://github.com/saicaca) for developing the [fuwari](https://github.com/saicaca/fuwari) template, which Firefly is based on for secondary development.
+Special thanks to [saicaca](https://github.com/saicaca) for developing the [fuwari](https://github.com/saicaca/fuwari) template, which HanYion is based on for secondary development.
 
-The copyright of Firefly-related image assets belongs to [miHoYo](https://www.mihoyo.com/), the developer of the game ["Honkai: Star Rail"](https://sr.mihoyo.com/).
+The copyright of HanYion-related image assets belongs to [miHoYo](https://www.mihoyo.com/), the developer of the game ["Honkai: Star Rail"](https://sr.mihoyo.com/).
 
 ### Tech Stack
 
@@ -253,7 +253,7 @@ The copyright of Firefly-related image assets belongs to [miHoYo](https://www.mi
 
 ### Other References
 - Blogger `霞葉` [Bangumi Collection](https://kasuha.com/posts/fuwari-enhance-ep2/) page component
-- Bilibili creator `公公的日常` Q-version [Firefly Mascot Spine Model](https://www.bilibili.com/video/BV1fuVzzdE5y)
+- Bilibili creator `公公的日常` Q-version [HanYion Mascot Spine Model](https://www.bilibili.com/video/BV1fuVzzdE5y)
 
 ## 📝 License
 
@@ -263,16 +263,16 @@ Originally forked from [saicaca/fuwari](https://github.com/saicaca/fuwari). Than
 
 **Copyright Notice:**
 - Copyright (c) 2024 [saicaca](https://github.com/saicaca) - [fuwari](https://github.com/saicaca/fuwari)
-- Copyright (c) 2025 [CuteLeaf](https://github.com/CuteLeaf) - [Firefly](https://github.com/CuteLeaf/Firefly)
+- Copyright (c) 2025 [CuteLeaf](https://github.com/CuteLeaf) - [HanYion](https://github.com/CuteLeaf/HanYion)
 
 Under the MIT license, you are free to use, modify, and distribute the code, but you must retain the above copyright notice.
 
 ## 🍀 Contributors
 
-Thanks to the following contributors for their contributions to this project. If you have any questions or suggestions, please submit an [Issue](https://github.com/CuteLeaf/Firefly/issues) or [Pull Request](https://github.com/CuteLeaf/Firefly/pulls).
+Thanks to the following contributors for their contributions to this project. If you have any questions or suggestions, please submit an [Issue](https://github.com/CuteLeaf/HanYion/issues) or [Pull Request](https://github.com/CuteLeaf/HanYion/pulls).
 
-><a href="https://github.com/CuteLeaf/Firefly/graphs/contributors">
->  <img src="https://contrib.rocks/image?repo=CuteLeaf/Firefly" />
+><a href="https://github.com/CuteLeaf/HanYion/graphs/contributors">
+>  <img src="https://contrib.rocks/image?repo=CuteLeaf/HanYion" />
 ></a>
 
 Thanks to the following contributors for their contributions to the original project [fuwari](https://github.com/saicaca/fuwari), which laid the foundation for this project.
@@ -283,7 +283,7 @@ Thanks to the following contributors for their contributions to the original pro
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=CuteLeaf/Firefly&type=Date)](https://star-history.com/#CuteLeaf/Firefly&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=CuteLeaf/HanYion&type=Date)](https://star-history.com/#CuteLeaf/HanYion&Date)
 
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->

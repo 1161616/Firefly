@@ -1,9 +1,9 @@
 
-<img src="./images/1131.png" width = "350" height = "500" alt="Firefly" align=right />
+<img src="./images/1131.png" width = "350" height = "500" alt="HanYion" align=right />
 
 <div align="center">
 
-# Firefly
+# HanYion
 > Свежий и красивый шаблон темы блога Astro
 > 
 > ![Node.js >= 22](https://img.shields.io/badge/node.js-%3E%3D22-brightgreen) 
@@ -11,16 +11,16 @@
 ![Astro](https://img.shields.io/badge/Astro-7.0.2-orange)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)
 >
-> [![Stars](https://img.shields.io/github/stars/CuteLeaf/Firefly?style=social)](https://github.com/CuteLeaf/Firefly/stargazers)
-[![Forks](https://img.shields.io/github/forks/CuteLeaf/Firefly?style=social)](https://github.com/CuteLeaf/Firefly/network/members)
-[![Issues](https://img.shields.io/github/issues/CuteLeaf/Firefly)](https://github.com/CuteLeaf/Firefly/issues)
+> [![Stars](https://img.shields.io/github/stars/CuteLeaf/HanYion?style=social)](https://github.com/CuteLeaf/HanYion/stargazers)
+[![Forks](https://img.shields.io/github/forks/CuteLeaf/HanYion?style=social)](https://github.com/CuteLeaf/HanYion/network/members)
+[![Issues](https://img.shields.io/github/issues/CuteLeaf/HanYion)](https://github.com/CuteLeaf/HanYion/issues)
 > 
 > [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z41NQALY)
 >
 > **QQ交流群：[1087127207](https://qm.qq.com/q/ZGsFa8qX2G)**
 > 
-> ![GitHub License](https://img.shields.io/github/license/CuteLeaf/Firefly)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/CuteLeaf/Firefly)
+> ![GitHub License](https://img.shields.io/github/license/CuteLeaf/HanYion)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/CuteLeaf/HanYion)
 [![Afdian Sponsor](https://img.shields.io/badge/Afdian-Поддержать%20автора-ff69b4.svg)](https://ifdian.net/a/cuteleaf)
 
 </div>
@@ -48,21 +48,21 @@
 
 >[!TIP]
 >
->Firefly — это свежий, красивый и современный шаблон темы персонального блога, разработанный на основе фреймворка Astro и шаблона Fuwari специально для технических энтузиастов и создателей контента. Тема объединяет современный веб-стек, предоставляет богатые функциональные модули и высоко настраиваемый интерфейс, позволяя легко создать профессиональный и эстетичный персональный блог.
+>HanYion — это свежий, красивый и современный шаблон темы персонального блога, разработанный на основе фреймворка Astro и шаблона Fuwari специально для технических энтузиастов и создателей контента. Тема объединяет современный веб-стек, предоставляет богатые функциональные модули и высоко настраиваемый интерфейс, позволяя легко создать профессиональный и эстетичный персональный блог.
 >
->С точки зрения ключевых макетов Firefly инновационно добавляет левые и правые двойные боковые панели, сеточный макет статей (многоколоночный) и макет masonry.
+>С точки зрения ключевых макетов HanYion инновационно добавляет левые и правые двойные боковые панели, сеточный макет статей (многоколоночный) и макет masonry.
 >
 >Также добавлены виджеты статистики сайта, календаря, оглавления статьи, музыкального плеера и быстрой навигации по категориям, что делает боковую панель и общий макет страницы более насыщенными.
 >
 >Кроме того, добавлены такие компоненты, как постер для шеринга, рекомендации связанных статей и случайные статьи, что делает страницы публикаций более содержательными.
 >
->**Если вы используете или берете за основу вышеуказанные дизайны компонентов и связанный код Firefly, пожалуйста, укажите источник: Firefly.**
+>**Если вы используете или берете за основу вышеуказанные дизайны компонентов и связанный код HanYion, пожалуйста, укажите источник: HanYion.**
 >
->Firefly также сохраняет оригинальный макет fuwari, который можно свободно переключать в конфигурационном файле в соответствии с вашими предпочтениями.
+>HanYion также сохраняет оригинальный макет fuwari, который можно свободно переключать в конфигурационном файле в соответствии с вашими предпочтениями.
 >
->**Подробнее о настройках макета и демонстрациях см.: [Детали системы макетов Firefly](https://firefly.cuteleaf.cn/posts/firefly-layout-system/)**
+>**Подробнее о настройках макета и демонстрациях см.: [Детали системы макетов HanYion](https://firefly.cuteleaf.cn/posts/firefly-layout-system/)**
 >
->Firefly поддерживает многоязычный UI через i18n, но, кроме упрощенного китайского, остальные языки переведены ИИ. Если вы заметите ошибки, пожалуйста, отправьте [Pull Request](https://github.com/CuteLeaf/Firefly/pulls) для исправления.
+>HanYion поддерживает многоязычный UI через i18n, но, кроме упрощенного китайского, остальные языки переведены ИИ. Если вы заметите ошибки, пожалуйста, отправьте [Pull Request](https://github.com/CuteLeaf/HanYion/pulls) для исправления.
 
 ## ✨ Возможности
 
@@ -85,7 +85,7 @@
 - [x] **Настройка цвета темы** - Регулировка оттенка на 360°
 
 
-Если у вас есть полезные функции и оптимизации, пожалуйста, отправьте [Pull Request](https://github.com/CuteLeaf/Firefly/pulls)
+Если у вас есть полезные функции и оптимизации, пожалуйста, отправьте [Pull Request](https://github.com/CuteLeaf/HanYion/pulls)
 
 ## 🚀 Быстрый старт
 
@@ -98,15 +98,15 @@
 
 1. **Клонировать репозиторий:**
    ```bash
-   git clone https://github.com/Cuteleaf/Firefly.git
-   cd Firefly
+   git clone https://github.com/Cuteleaf/HanYion.git
+   cd HanYion
    ```
    
-   **Сначала создайте [Fork](https://github.com/CuteLeaf/Firefly/fork) в свой репозиторий, затем клонируйте (рекомендуется). Не забудьте нажать Star перед Fork!**
+   **Сначала создайте [Fork](https://github.com/CuteLeaf/HanYion/fork) в свой репозиторий, затем клонируйте (рекомендуется). Не забудьте нажать Star перед Fork!**
 
    ```bash
-   git clone https://github.com/you-github-name/Firefly.git
-   cd Firefly
+   git clone https://github.com/you-github-name/HanYion.git
+   cd HanYion
    ```
 3. **Установить зависимости:**
    ```bash
@@ -140,12 +140,12 @@
 
    Команда установки: `pnpm install`
 
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/CuteLeaf/Firefly&project-name=Firefly&repository-name=Firefly)
-   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CuteLeaf/Firefly)
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/CuteLeaf/HanYion&project-name=HanYion&repository-name=HanYion)
+   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CuteLeaf/HanYion)
 
 ## 📖 Настройка
 
-> 📚 **Подробная документация по настройке**: См. [документацию Firefly](https://docs-firefly.cuteleaf.cn/) для полного руководства по настройке
+> 📚 **Подробная документация по настройке**: См. [документацию HanYion](https://docs-firefly.cuteleaf.cn/) для полного руководства по настройке
 
 ### Установка языка сайта
 
@@ -236,9 +236,9 @@ comment: true    # Включить комментарии
 
 ## 🙏 Благодарности
 
-Особая благодарность [saicaca](https://github.com/saicaca) за разработку шаблона [fuwari](https://github.com/saicaca/fuwari), на котором Firefly основан для вторичной разработки.
+Особая благодарность [saicaca](https://github.com/saicaca) за разработку шаблона [fuwari](https://github.com/saicaca/fuwari), на котором HanYion основан для вторичной разработки.
 
-Авторские права на изображения Firefly принадлежат компании [miHoYo](https://www.mihoyo.com/), разработчику игры ["Honkai: Star Rail"](https://sr.mihoyo.com/).
+Авторские права на изображения HanYion принадлежат компании [miHoYo](https://www.mihoyo.com/), разработчику игры ["Honkai: Star Rail"](https://sr.mihoyo.com/).
 
 ### Технический стек
 
@@ -255,7 +255,7 @@ comment: true    # Включить комментарии
 
 ### Другие ссылки
 - Компонент страницы [Bangumi Collection](https://kasuha.com/posts/fuwari-enhance-ep2/) блогера `霞葉`
-- Q-версия [Firefly Mascot Spine Model](https://www.bilibili.com/video/BV1fuVzzdE5y) от создателя Bilibili `公公的日常`
+- Q-версия [HanYion Mascot Spine Model](https://www.bilibili.com/video/BV1fuVzzdE5y) от создателя Bilibili `公公的日常`
 
 ## 📝 Лицензия
 
@@ -265,16 +265,16 @@ comment: true    # Включить комментарии
 
 **Уведомление об авторских правах:**
 - Copyright (c) 2024 [saicaca](https://github.com/saicaca) - [fuwari](https://github.com/saicaca/fuwari)
-- Copyright (c) 2025 [CuteLeaf](https://github.com/CuteLeaf) - [Firefly](https://github.com/CuteLeaf/Firefly)
+- Copyright (c) 2025 [CuteLeaf](https://github.com/CuteLeaf) - [HanYion](https://github.com/CuteLeaf/HanYion)
 
 В соответствии с лицензией MIT вы можете свободно использовать, изменять и распространять код, но обязаны сохранять вышеуказанное уведомление об авторских правах.
 
 ## 🍀 Участники
 
-Спасибо следующим участникам за их вклад в этот проект. Если у вас есть вопросы или предложения, пожалуйста, отправьте [Issue](https://github.com/CuteLeaf/Firefly/issues) или [Pull Request](https://github.com/CuteLeaf/Firefly/pulls).
+Спасибо следующим участникам за их вклад в этот проект. Если у вас есть вопросы или предложения, пожалуйста, отправьте [Issue](https://github.com/CuteLeaf/HanYion/issues) или [Pull Request](https://github.com/CuteLeaf/HanYion/pulls).
 
-><a href="https://github.com/CuteLeaf/Firefly/graphs/contributors">
->  <img src="https://contrib.rocks/image?repo=CuteLeaf/Firefly" />
+><a href="https://github.com/CuteLeaf/HanYion/graphs/contributors">
+>  <img src="https://contrib.rocks/image?repo=CuteLeaf/HanYion" />
 ></a>
 
 Спасибо следующим участникам за их вклад в исходный проект [fuwari](https://github.com/saicaca/fuwari), который заложил основу для этого проекта.
@@ -285,7 +285,7 @@ comment: true    # Включить комментарии
 
 ## ⭐ История звезд
 
-[![Star History Chart](https://api.star-history.com/svg?repos=CuteLeaf/Firefly&type=Date)](https://star-history.com/#CuteLeaf/Firefly&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=CuteLeaf/HanYion&type=Date)](https://star-history.com/#CuteLeaf/HanYion&Date)
 
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
