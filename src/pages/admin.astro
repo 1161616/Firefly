@@ -1,0 +1,797 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex,nofollow" />
+		<title>Firefly CMS</title>
+		<style>
+			:root {
+				color-scheme: light;
+				--ink: #17201b;
+				--muted: #647168;
+				--line: #cfd7c8;
+				--panel: #fbfcf6;
+				--field: #ffffff;
+				--deep: #10251e;
+				--accent: #d6ff72;
+				--danger: #8b2f1e;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				background: #eef0e8;
+				color: var(--ink);
+				font-family: Aptos, "Segoe UI", sans-serif;
+			}
+
+			button,
+			input,
+			select,
+			textarea {
+				font: inherit;
+			}
+
+			button,
+			a.button {
+				border: 0;
+				border-radius: 6px;
+				cursor: pointer;
+				text-decoration: none;
+			}
+
+			.cms-shell {
+				min-height: 100vh;
+				display: grid;
+				grid-template-columns: 260px 1fr;
+			}
+
+			.login-panel {
+				grid-column: 1 / -1;
+				width: min(420px, calc(100vw - 32px));
+				margin: auto;
+				background: var(--panel);
+				border: 1px solid var(--line);
+				border-radius: 8px;
+				padding: 32px;
+				box-shadow: 0 24px 80px rgb(38 52 42 / 0.16);
+			}
+
+			.mark {
+				width: 38px;
+				height: 38px;
+				display: grid;
+				place-items: center;
+				background: var(--deep);
+				color: var(--accent);
+				border-radius: 6px;
+				font-weight: 800;
+			}
+
+			.login-panel h1 {
+				margin: 18px 0 8px;
+				font-size: 32px;
+			}
+
+			.login-panel p {
+				color: var(--muted);
+				line-height: 1.6;
+			}
+
+			.sidebar {
+				background: var(--deep);
+				color: #f5f8ec;
+				padding: 20px;
+				display: flex;
+				flex-direction: column;
+				gap: 28px;
+			}
+
+			.brand {
+				display: flex;
+				gap: 12px;
+				align-items: center;
+			}
+
+			.brand span {
+				display: block;
+				color: #aab9af;
+				font-size: 12px;
+				margin-top: 2px;
+			}
+
+			nav {
+				display: grid;
+				gap: 6px;
+			}
+
+			nav button {
+				text-align: left;
+				padding: 11px 12px;
+				background: transparent;
+				color: #cfdbd2;
+			}
+
+			nav button.active,
+			nav button:hover {
+				background: var(--accent);
+				color: var(--deep);
+			}
+
+			.workspace {
+				min-width: 0;
+				padding: 22px;
+				display: grid;
+				grid-template-rows: auto auto 1fr;
+				gap: 16px;
+			}
+
+			.topbar,
+			.metric,
+			.upload-box,
+			.list-pane,
+			.editor,
+			.single-editor {
+				background: var(--panel);
+				border: 1px solid var(--line);
+				border-radius: 8px;
+			}
+
+			.topbar {
+				padding: 14px 16px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.eyebrow {
+				display: block;
+				color: var(--muted);
+				font-size: 11px;
+				text-transform: uppercase;
+			}
+
+			.user {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+
+			.user img {
+				width: 28px;
+				height: 28px;
+				border-radius: 50%;
+			}
+
+			a {
+				color: #195c49;
+				font-weight: 700;
+			}
+
+			.notice,
+			.error {
+				border-radius: 6px;
+				padding: 11px 14px;
+				background: #e9ffd0;
+				border: 1px solid #b8d98d;
+			}
+
+			.error,
+			.error-text {
+				background: #ffe9e1;
+				border-color: #ffb8a3;
+				color: var(--danger);
+			}
+
+			.dashboard {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 14px;
+				align-content: start;
+			}
+
+			.metric {
+				padding: 18px;
+			}
+
+			.metric span {
+				color: var(--muted);
+			}
+
+			.metric strong {
+				display: block;
+				margin-top: 8px;
+				font-size: 28px;
+			}
+
+			.split {
+				min-height: 0;
+				display: grid;
+				grid-template-columns: 320px 1fr;
+				gap: 16px;
+			}
+
+			.list-pane {
+				overflow: auto;
+			}
+
+			.pane-head,
+			.toolbar,
+			.actions {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 10px;
+				padding: 12px;
+				border-bottom: 1px solid #dce3d7;
+			}
+
+			.pane-head h2 {
+				margin: 0;
+				font-size: 18px;
+			}
+
+			.row {
+				width: calc(100% - 16px);
+				margin: 8px;
+				padding: 10px;
+				text-align: left;
+				background: #f1f4ec;
+				border-radius: 6px;
+			}
+
+			.row.selected {
+				outline: 2px solid #84ad22;
+			}
+
+			.row span {
+				display: block;
+				margin-top: 4px;
+				color: var(--muted);
+				font-size: 12px;
+			}
+
+			.editor {
+				overflow: auto;
+				padding: 14px;
+			}
+
+			.form-grid {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 12px;
+			}
+
+			label {
+				display: grid;
+				gap: 6px;
+				color: #48534c;
+				font-size: 13px;
+				font-weight: 700;
+			}
+
+			label.wide {
+				grid-column: 1 / -1;
+			}
+
+			input,
+			select,
+			textarea {
+				width: 100%;
+				border: 1px solid #bdc8bf;
+				border-radius: 6px;
+				background: var(--field);
+				color: var(--ink);
+				padding: 9px 10px;
+			}
+
+			input[type="checkbox"] {
+				width: 18px;
+				height: 18px;
+			}
+
+			textarea {
+				min-height: 360px;
+				resize: vertical;
+				line-height: 1.55;
+			}
+
+			.body-label {
+				margin-top: 12px;
+			}
+
+			.single-editor {
+				display: grid;
+				grid-template-rows: auto 1fr;
+				min-height: 0;
+			}
+
+			.single-editor textarea {
+				min-height: 0;
+				height: 100%;
+				border: 0;
+				border-radius: 0 0 8px 8px;
+			}
+
+			.code {
+				font-family: "JetBrains Mono", "Cascadia Code", monospace;
+				font-size: 13px;
+			}
+
+			.primary,
+			.button.primary {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 38px;
+				padding: 0 14px;
+				background: var(--deep);
+				color: #f8ffe8;
+			}
+
+			.secondary,
+			.button.secondary {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 38px;
+				padding: 0 14px;
+				background: #dce3d7;
+				color: var(--deep);
+			}
+
+			.danger {
+				padding: 9px 12px;
+				background: #ffe0d6;
+				color: var(--danger);
+			}
+
+			button:disabled {
+				opacity: 0.55;
+				cursor: wait;
+			}
+
+			.assets {
+				max-width: 720px;
+			}
+
+			.upload-box {
+				display: grid;
+				gap: 14px;
+				padding: 18px;
+			}
+
+			.asset-result {
+				display: grid;
+				gap: 6px;
+			}
+
+			@media (max-width: 900px) {
+				.cms-shell {
+					grid-template-columns: 1fr;
+				}
+
+				.sidebar {
+					position: sticky;
+					top: 0;
+					z-index: 2;
+					padding: 12px;
+				}
+
+				nav {
+					grid-template-columns: repeat(5, minmax(0, 1fr));
+					overflow-x: auto;
+				}
+
+				nav button {
+					text-align: center;
+					white-space: nowrap;
+				}
+
+				.workspace {
+					padding: 12px;
+				}
+
+				.topbar,
+				.split,
+				.dashboard,
+				.form-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.topbar {
+					display: grid;
+					gap: 12px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main id="cms" class="cms-shell">
+			<section class="login-panel">
+				<div class="mark">F</div>
+				<h1>Firefly CMS</h1>
+				<p>Loading admin workspace.</p>
+			</section>
+		</main>
+
+		<script is:inline>
+			const state = {
+				session: null,
+				posts: [],
+				selectedPost: null,
+				specPages: ["about", "friends", "guestbook"],
+				selectedSpec: "about",
+				specContent: "",
+				configs: [],
+				selectedConfig: "siteConfig",
+				configText: "{}",
+				active: "dashboard",
+				busy: false,
+				status: "",
+				error: "",
+				loginError: new URLSearchParams(location.search).get("error") || "",
+				assetTarget: "github",
+				assetDirectory: "public/assets/cms",
+				assetUrl: "",
+			};
+
+			const postFields = [
+				"title",
+				"published",
+				"updated",
+				"draft",
+				"description",
+				"image",
+				"tags",
+				"category",
+				"lang",
+				"pinned",
+				"author",
+				"sourceLink",
+				"licenseName",
+				"licenseUrl",
+				"comment",
+				"password",
+				"passwordHint",
+			];
+			const booleanFields = new Set(["draft", "pinned", "comment"]);
+
+			const api = async (path, options = {}) => {
+				const response = await fetch(path, {
+					...options,
+					headers: {
+						"content-type": "application/json",
+						...(options.headers || {}),
+					},
+				});
+				const data = await response.json().catch(() => ({}));
+				if (!response.ok) throw new Error(data.error || response.statusText);
+				return data;
+			};
+
+			const escapeHtml = (value) =>
+				String(value ?? "")
+					.replaceAll("&", "&amp;")
+					.replaceAll("<", "&lt;")
+					.replaceAll(">", "&gt;")
+					.replaceAll('"', "&quot;");
+
+			const run = async (task, message = "Saved") => {
+				state.busy = true;
+				state.error = "";
+				state.status = "";
+				render();
+				try {
+					await task();
+					state.status = message;
+				} catch (error) {
+					state.error = error instanceof Error ? error.message : String(error);
+				} finally {
+					state.busy = false;
+					render();
+				}
+			};
+
+			const createBlankPost = () => ({
+				slug: `new-post-${new Date().toISOString().slice(0, 10)}`,
+				extension: "md",
+				meta: {
+					title: "New post",
+					published: new Date().toISOString().slice(0, 10),
+					draft: true,
+					description: "",
+					tags: [],
+					category: "",
+					comment: true,
+				},
+				body: "",
+			});
+
+			const loadSession = async () => {
+				state.session = await api("/api/admin/me");
+				if (state.session.authenticated && state.session.allowed) {
+					state.configs = state.session.configKeys.map((name) => ({
+						name,
+						path: `src/config/cms/${name}.json`,
+					}));
+					await Promise.all([
+						loadPosts(false),
+						loadConfig(state.selectedConfig, false),
+						loadSpec(state.selectedSpec, false),
+					]);
+				}
+				render();
+			};
+
+			const loadPosts = async (shouldRender = true) => {
+				const data = await api("/api/admin/content/posts");
+				state.posts = data.posts.sort((a, b) =>
+					String(b.meta.published || "").localeCompare(
+						String(a.meta.published || ""),
+					),
+				);
+				state.selectedPost = state.posts[0] || createBlankPost();
+				if (shouldRender) render();
+			};
+
+			const loadSpec = async (page, shouldRender = true) => {
+				state.selectedSpec = page;
+				const data = await api(`/api/admin/content/spec/${page}`);
+				state.specContent = data.content;
+				if (shouldRender) render();
+			};
+
+			const loadConfig = async (key, shouldRender = true) => {
+				state.selectedConfig = key;
+				const data = await api(`/api/admin/config/${key}`);
+				state.configText = JSON.stringify(data.value ?? {}, null, 2);
+				if (shouldRender) render();
+			};
+
+			const savePost = async () => {
+				if (!state.selectedPost) return;
+				await run(async () => {
+					collectPostForm();
+					await api(`/api/admin/content/posts/${state.selectedPost.slug}`, {
+						method: "PUT",
+						body: JSON.stringify(state.selectedPost),
+					});
+					await loadPosts(false);
+				}, "Post committed to GitHub");
+			};
+
+			const deletePost = async () => {
+				if (!state.selectedPost || !confirm(`Delete ${state.selectedPost.slug}?`)) {
+					return;
+				}
+				await run(async () => {
+					await api(`/api/admin/content/posts/${state.selectedPost.slug}`, {
+						method: "DELETE",
+					});
+					await loadPosts(false);
+				}, "Post deleted");
+			};
+
+			const saveSpec = async () => {
+				await run(async () => {
+					state.specContent =
+						document.querySelector("[data-spec-content]")?.value || "";
+					await api(`/api/admin/content/spec/${state.selectedSpec}`, {
+						method: "PUT",
+						body: JSON.stringify({ content: state.specContent }),
+					});
+				}, "Page committed");
+			};
+
+			const saveConfig = async () => {
+				await run(async () => {
+					state.configText =
+						document.querySelector("[data-config-content]")?.value || "{}";
+					await api(`/api/admin/config/${state.selectedConfig}`, {
+						method: "PUT",
+						body: JSON.stringify({ value: JSON.parse(state.configText) }),
+					});
+				}, "Config committed");
+			};
+
+			const uploadAsset = async (input) => {
+				const file = input.files?.[0];
+				if (!file) return;
+				await run(async () => {
+					const data = await new Promise((resolve, reject) => {
+						const reader = new FileReader();
+						reader.onload = () => resolve(String(reader.result));
+						reader.onerror = () => reject(reader.error);
+						reader.readAsDataURL(file);
+					});
+					const result = await api("/api/admin/assets", {
+						method: "POST",
+						body: JSON.stringify({
+							target: state.assetTarget,
+							name: file.name,
+							contentType: file.type,
+							data,
+							directory: state.assetDirectory,
+						}),
+					});
+					state.assetUrl = result.url;
+				}, "Asset uploaded");
+				input.value = "";
+			};
+
+			const publish = async () => {
+				await run(async () => {
+					await api("/api/admin/publish", { method: "POST", body: "{}" });
+				}, "Saves commit directly to GitHub; wait for Vercel to rebuild.");
+			};
+
+			const collectPostForm = () => {
+				const form = document.querySelector("[data-post-form]");
+				if (!form || !state.selectedPost) return;
+				state.selectedPost.slug = form.slug.value;
+				state.selectedPost.extension = form.extension.value;
+				for (const field of postFields) {
+					if (booleanFields.has(field)) {
+						state.selectedPost.meta[field] = form[field].checked;
+					} else if (field === "tags") {
+						state.selectedPost.meta[field] = form[field].value
+							.split(",")
+							.map((tag) => tag.trim())
+							.filter(Boolean);
+					} else {
+						state.selectedPost.meta[field] = form[field].value;
+					}
+				}
+				state.selectedPost.body = form.body.value;
+			};
+
+			const selectPost = (slug) => {
+				const post = state.posts.find((item) => item.slug === slug);
+				state.selectedPost = structuredClone(post || createBlankPost());
+				state.active = "posts";
+				render();
+			};
+
+			const setActive = (active) => {
+				state.active = active;
+				render();
+			};
+
+			const renderLogin = () => {
+				if (!state.session) {
+					return `<section class="login-panel"><div class="mark">F</div><h1>Firefly CMS</h1><p>Checking admin session.</p></section>`;
+				}
+				if (!state.session.authenticated) {
+					return `<section class="login-panel"><div class="mark">F</div><h1>Firefly CMS</h1><p>Sign in with GitHub to manage posts, config, and assets.</p><a class="button primary" href="/api/admin/auth/login">Sign in with GitHub</a>${state.loginError ? `<p class="error-text">Login failed: ${escapeHtml(state.loginError)}</p>` : ""}</section>`;
+				}
+				if (!state.session.allowed) {
+					return `<section class="login-panel"><div class="mark">F</div><h1>Access denied</h1><p>${escapeHtml(state.session.user?.login)} is not in CMS_ALLOWED_USERS.</p><a class="button secondary" href="/api/admin/auth/logout">Sign out</a></section>`;
+				}
+				return "";
+			};
+
+			const renderShell = () => {
+				const nav = [
+					["dashboard", "Dashboard"],
+					["posts", "Posts"],
+					["spec", "Pages"],
+					["config", "Config"],
+					["assets", "Assets"],
+				]
+					.map(
+						([id, label]) =>
+							`<button class="${state.active === id ? "active" : ""}" data-active="${id}">${label}</button>`,
+					)
+					.join("");
+
+				return `<aside class="sidebar"><div class="brand"><div class="mark">F</div><div><strong>Firefly CMS</strong><span>${escapeHtml(state.session.repository)}</span></div></div><nav>${nav}</nav></aside><section class="workspace"><header class="topbar"><div><span class="eyebrow">branch</span><strong>${escapeHtml(state.session.branch)}</strong></div><div class="user">${state.session.user?.avatar_url ? `<img src="${escapeHtml(state.session.user.avatar_url)}" alt="" />` : ""}<span>${escapeHtml(state.session.user?.login)}</span><a href="/api/admin/auth/logout">Sign out</a></div></header>${state.status || state.error ? `<div class="${state.error ? "error" : "notice"}">${escapeHtml(state.error || state.status)}</div>` : ""}${renderPanel()}</section>`;
+			};
+
+			const renderPanel = () => {
+				if (state.active === "dashboard") return renderDashboard();
+				if (state.active === "posts") return renderPosts();
+				if (state.active === "spec") return renderSpec();
+				if (state.active === "config") return renderConfig();
+				if (state.active === "assets") return renderAssets();
+				return "";
+			};
+
+			const renderDashboard = () =>
+				`<section class="dashboard"><div class="metric"><span>Posts</span><strong>${state.posts.length}</strong></div><div class="metric"><span>Config modules</span><strong>${state.session.configKeys.length}</strong></div><div class="metric"><span>Asset targets</span><strong>GitHub / R2</strong></div><button class="primary" data-publish ${state.busy ? "disabled" : ""}>Publish status</button></section>`;
+
+			const renderPosts = () => {
+				const list = state.posts
+					.map(
+						(post) =>
+							`<button class="row ${state.selectedPost?.slug === post.slug ? "selected" : ""}" data-post="${escapeHtml(post.slug)}"><strong>${escapeHtml(post.meta.title || post.slug)}</strong><span>${escapeHtml(post.slug)}</span></button>`,
+					)
+					.join("");
+				const post = state.selectedPost || createBlankPost();
+				const fields = postFields
+					.map((field) => {
+						const value = post.meta[field];
+						const text = Array.isArray(value)
+							? value.join(", ")
+							: value === undefined || value === null
+								? ""
+								: String(value);
+						const wide = field === "description" || field === "image" ? "wide" : "";
+						if (booleanFields.has(field)) {
+							return `<label class="${wide}">${field}<input name="${field}" type="checkbox" ${value ? "checked" : ""} /></label>`;
+						}
+						return `<label class="${wide}">${field}<input name="${field}" value="${escapeHtml(text)}" /></label>`;
+					})
+					.join("");
+				return `<section class="split"><div class="list-pane"><div class="pane-head"><h2>Posts</h2><button data-new-post>New</button></div>${list}</div><form class="editor" data-post-form><div class="form-grid"><label>Slug<input name="slug" value="${escapeHtml(post.slug)}" /></label><label>Extension<select name="extension"><option value="md" ${post.extension === "md" ? "selected" : ""}>md</option><option value="mdx" ${post.extension === "mdx" ? "selected" : ""}>mdx</option></select></label>${fields}</div><label class="body-label">Body<textarea name="body">${escapeHtml(post.body)}</textarea></label><div class="actions"><button class="danger" type="button" data-delete-post ${state.busy ? "disabled" : ""}>Delete</button><button class="primary" type="submit" ${state.busy ? "disabled" : ""}>Save post</button></div></form></section>`;
+			};
+
+			const renderSpec = () =>
+				`<section class="single-editor"><div class="toolbar"><select data-spec-select>${state.specPages.map((page) => `<option value="${page}" ${page === state.selectedSpec ? "selected" : ""}>${page}</option>`).join("")}</select><button class="primary" data-save-spec ${state.busy ? "disabled" : ""}>Save page</button></div><textarea data-spec-content>${escapeHtml(state.specContent)}</textarea></section>`;
+
+			const renderConfig = () =>
+				`<section class="single-editor"><div class="toolbar"><select data-config-select>${state.configs.map((config) => `<option value="${config.name}" ${config.name === state.selectedConfig ? "selected" : ""}>${config.name}</option>`).join("")}</select><button class="primary" data-save-config ${state.busy ? "disabled" : ""}>Save config</button></div><textarea class="code" data-config-content>${escapeHtml(state.configText)}</textarea></section>`;
+
+			const renderAssets = () =>
+				`<section class="assets"><div class="upload-box"><label>Upload target<select data-asset-target><option value="github" ${state.assetTarget === "github" ? "selected" : ""}>GitHub repository</option><option value="r2" ${state.assetTarget === "r2" ? "selected" : ""}>Cloudflare R2</option></select></label><label>Directory / key prefix<input data-asset-directory value="${escapeHtml(state.assetDirectory)}" /></label><input type="file" data-asset-file />${state.assetUrl ? `<div class="asset-result"><span>URL</span><input readonly value="${escapeHtml(state.assetUrl)}" /></div>` : ""}</div></section>`;
+
+			const bindEvents = () => {
+				document.querySelectorAll("[data-active]").forEach((button) => {
+					button.addEventListener("click", () => setActive(button.dataset.active));
+				});
+				document.querySelectorAll("[data-post]").forEach((button) => {
+					button.addEventListener("click", () => selectPost(button.dataset.post));
+				});
+				document.querySelector("[data-new-post]")?.addEventListener("click", () => {
+					state.selectedPost = createBlankPost();
+					render();
+				});
+				document.querySelector("[data-post-form]")?.addEventListener("submit", (event) => {
+					event.preventDefault();
+					savePost();
+				});
+				document.querySelector("[data-delete-post]")?.addEventListener("click", deletePost);
+				document.querySelector("[data-spec-select]")?.addEventListener("change", (event) => {
+					loadSpec(event.target.value);
+				});
+				document.querySelector("[data-save-spec]")?.addEventListener("click", saveSpec);
+				document.querySelector("[data-config-select]")?.addEventListener("change", (event) => {
+					loadConfig(event.target.value);
+				});
+				document.querySelector("[data-save-config]")?.addEventListener("click", saveConfig);
+				document.querySelector("[data-publish]")?.addEventListener("click", publish);
+				document.querySelector("[data-asset-target]")?.addEventListener("change", (event) => {
+					state.assetTarget = event.target.value;
+				});
+				document.querySelector("[data-asset-directory]")?.addEventListener("input", (event) => {
+					state.assetDirectory = event.target.value;
+				});
+				document.querySelector("[data-asset-file]")?.addEventListener("change", (event) => {
+					uploadAsset(event.target);
+				});
+			};
+
+			const render = () => {
+				const app = document.getElementById("cms");
+				if (!state.session || !state.session.authenticated || !state.session.allowed) {
+					app.innerHTML = renderLogin();
+				} else {
+					app.innerHTML = renderShell();
+				}
+				bindEvents();
+			};
+
+			loadSession().catch((error) => {
+				state.error = error instanceof Error ? error.message : String(error);
+				render();
+			});
+		</script>
+	</body>
+</html>

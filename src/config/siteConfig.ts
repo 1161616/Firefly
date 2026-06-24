@@ -1,10 +1,12 @@
 import type { SiteConfig } from "@/types/siteConfig";
+import cmsSiteConfig from "./cms/siteConfig.json";
+import { mergeCmsConfig } from "./cms";
 
 // 定义站点语言
 // 语言代码，例如：'zh_CN', 'zh_TW', 'en', 'ja', 'ru'。
 const SITE_LANG = "zh_CN";
 
-export const siteConfig: SiteConfig = {
+const defaultSiteConfig: SiteConfig = {
 	// 站点标题
 	title: "HanYion",
 
@@ -221,3 +223,8 @@ export const siteConfig: SiteConfig = {
 	// 站点语言，在本配置文件顶部SITE_LANG定义
 	lang: SITE_LANG,
 };
+
+export const siteConfig: SiteConfig = mergeCmsConfig(
+	defaultSiteConfig,
+	cmsSiteConfig,
+);

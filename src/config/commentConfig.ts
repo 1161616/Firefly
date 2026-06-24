@@ -1,6 +1,8 @@
 import type { CommentConfig } from "../types/commentConfig";
+import cmsCommentConfig from "./cms/commentConfig.json";
+import { mergeCmsConfig } from "./cms";
 
-export const commentConfig: CommentConfig = {
+const defaultCommentConfig: CommentConfig = {
 	// 评论系统类型: none, twikoo, waline, giscus, disqus, artalk，默认为none，即不启用评论系统
 	type: "none",
 
@@ -83,3 +85,8 @@ export const commentConfig: CommentConfig = {
 		shortname: "firefly",
 	},
 };
+
+export const commentConfig: CommentConfig = mergeCmsConfig(
+	defaultCommentConfig,
+	cmsCommentConfig,
+);

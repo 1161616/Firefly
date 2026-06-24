@@ -1,6 +1,8 @@
 import type { BackgroundWallpaperConfig } from "@/types/backgroundWallpaper";
+import cmsBackgroundWallpaper from "./cms/backgroundWallpaper.json";
+import { mergeCmsConfig } from "./cms";
 
-export const backgroundWallpaper: BackgroundWallpaperConfig = {
+const defaultBackgroundWallpaper: BackgroundWallpaperConfig = {
 	// 壁纸模式："banner" 横幅壁纸，"fullscreen" 全屏壁纸，"overlay" 全屏透明，"none" 纯色背景无壁纸
 	mode: "banner",
 	// 是否允许用户通过导航栏切换壁纸模式
@@ -183,3 +185,8 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		position: "center",
 	},
 };
+
+export const backgroundWallpaper: BackgroundWallpaperConfig = mergeCmsConfig(
+	defaultBackgroundWallpaper,
+	cmsBackgroundWallpaper,
+);

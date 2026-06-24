@@ -1,7 +1,9 @@
 import type { MusicPlayerConfig } from "../types/musicConfig";
+import cmsMusicConfig from "./cms/musicConfig.json";
+import { mergeCmsConfig } from "./cms";
 
 // 音乐播放器配置
-export const musicPlayerConfig: MusicPlayerConfig = {
+const defaultMusicPlayerConfig: MusicPlayerConfig = {
 	// 禁用音乐播放器方法：
 	// 模板默认侧边栏和导航栏两个都显示
 	// 1. 侧边栏：在sidebarConfig.ts侧边栏配置把音乐组件enable设为false禁用即可
@@ -59,3 +61,8 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 		],
 	},
 };
+
+export const musicPlayerConfig: MusicPlayerConfig = mergeCmsConfig(
+	defaultMusicPlayerConfig,
+	cmsMusicConfig,
+);

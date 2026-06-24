@@ -1,7 +1,9 @@
 import type { GalleryConfig } from "@/types/galleryConfig";
+import cmsGalleryConfig from "./cms/galleryConfig.json";
+import { mergeCmsConfig } from "./cms";
 
 // 相册配置
-export const galleryConfig: GalleryConfig = {
+const defaultGalleryConfig: GalleryConfig = {
 	// 相册列表
 	albums: [
 		// 支持jpg/png/webp/avif/gif格式
@@ -40,3 +42,8 @@ export const galleryConfig: GalleryConfig = {
 	// 值越小列数越多，值越大列数越少
 	columnWidth: 240,
 };
+
+export const galleryConfig: GalleryConfig = mergeCmsConfig(
+	defaultGalleryConfig,
+	cmsGalleryConfig,
+);

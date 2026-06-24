@@ -4,6 +4,8 @@ import {
 	type NavBarSearchConfig,
 	NavBarSearchMethod,
 } from "../types/navBarConfig";
+import cmsNavBarConfig from "./cms/navBarConfig.json";
+import { mergeCmsConfig } from "./cms";
 
 // ============================================================================
 // 导航栏配置 - 根据顺序动态生成导航栏链接
@@ -188,4 +190,7 @@ export const LinkPresets: Record<string, NavBarLink> = {
 	},
 };
 
-export const navBarConfig: NavBarConfig = getDynamicNavBarConfig();
+export const navBarConfig: NavBarConfig = mergeCmsConfig(
+	getDynamicNavBarConfig(),
+	cmsNavBarConfig,
+);

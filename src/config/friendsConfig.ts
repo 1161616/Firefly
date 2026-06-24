@@ -1,9 +1,11 @@
 import type { FriendLink, FriendsPageConfig } from "../types/friendsConfig";
+import cmsFriendsConfig from "./cms/friendsConfig.json";
+import { mergeCmsConfig, useCmsValue } from "./cms";
 
 // 可以在src/content/spec/friends.md中编写友链页面下方的自定义内容
 
 // 友链页面配置
-export const friendsPageConfig: FriendsPageConfig = {
+const defaultFriendsPageConfig: FriendsPageConfig = {
 	// 页面标题，如果留空则使用 i18n 中的翻译
 	title: "",
 
@@ -21,7 +23,7 @@ export const friendsPageConfig: FriendsPageConfig = {
 };
 
 // 友链配置
-export const friendsConfig: FriendLink[] = [
+const defaultFriendsConfig: FriendLink[] = [
 	{
 		title: "夏夜流萤",
 		imgurl:
@@ -51,6 +53,21 @@ export const friendsConfig: FriendLink[] = [
 		enabled: true,
 	},
 ];
+
+const cmsFriends = cmsFriendsConfig as {
+	page?: FriendsPageConfig;
+	links?: FriendLink[];
+};
+
+export const friendsPageConfig: FriendsPageConfig = mergeCmsConfig(
+	defaultFriendsPageConfig,
+	cmsFriends.page,
+);
+
+export const friendsConfig: FriendLink[] = useCmsValue(
+	defaultFriendsConfig,
+	cmsFriends.links,
+);
 
 // 获取启用的友链并进行排序
 export const getEnabledFriends = (): FriendLink[] => {

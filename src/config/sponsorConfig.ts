@@ -1,6 +1,8 @@
 import type { SponsorConfig } from "../types/sponsorConfig";
+import cmsSponsorConfig from "./cms/sponsorConfig.json";
+import { mergeCmsConfig } from "./cms";
 
-export const sponsorConfig: SponsorConfig = {
+const defaultSponsorConfig: SponsorConfig = {
 	// 页面标题，如果留空则使用 i18n 中的翻译
 	title: "",
 
@@ -77,3 +79,8 @@ export const sponsorConfig: SponsorConfig = {
 		},
 	],
 };
+
+export const sponsorConfig: SponsorConfig = mergeCmsConfig(
+	defaultSponsorConfig,
+	cmsSponsorConfig,
+);

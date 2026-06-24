@@ -1,6 +1,8 @@
 import type { AnnouncementConfig } from "../types/announcementConfig";
+import cmsAnnouncementConfig from "./cms/announcementConfig.json";
+import { mergeCmsConfig } from "./cms";
 
-export const announcementConfig: AnnouncementConfig = {
+const defaultAnnouncementConfig: AnnouncementConfig = {
 	// 公告标题
 	title: "公告",
 
@@ -21,3 +23,8 @@ export const announcementConfig: AnnouncementConfig = {
 		external: false,
 	},
 };
+
+export const announcementConfig: AnnouncementConfig = mergeCmsConfig(
+	defaultAnnouncementConfig,
+	cmsAnnouncementConfig,
+);

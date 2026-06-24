@@ -1,6 +1,8 @@
 import type { AnalyticsConfig } from "../types/analyticsConfig";
+import cmsAnalyticsConfig from "./cms/analyticsConfig.json";
+import { mergeCmsConfig } from "./cms";
 
-export const analyticsConfig: AnalyticsConfig = {
+const defaultAnalyticsConfig: AnalyticsConfig = {
 	// Google Analytics ID
 	googleAnalyticsId: "",
 	// Microsoft Clarity ID
@@ -47,3 +49,8 @@ export const analyticsConfig: AnalyticsConfig = {
 		screenRecord: true,
 	},
 };
+
+export const analyticsConfig: AnalyticsConfig = mergeCmsConfig(
+	defaultAnalyticsConfig,
+	cmsAnalyticsConfig,
+);

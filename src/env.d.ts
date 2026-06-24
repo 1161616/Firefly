@@ -1,4 +1,11 @@
 /// <reference types="astro/client" />
+
+declare module "*.svelte" {
+	import type { ComponentType, SvelteComponent } from "svelte";
+
+	const component: ComponentType<SvelteComponent>;
+	export default component;
+}
 /// <reference path="../.astro/types.d.ts" />
 
 declare global {
